@@ -10,7 +10,7 @@ module.exports = async function (context, timer) {
 
     const response = await request.get('https://api.github.com/events');
 
-    const messages = response.filter(event => {
+    const messages = response.body.filter(event => {
         return event.type === 'IssuesEvent' || event.type === 'PullRequestEvent'
     }).map(event => {
         const title = event.payload.pull_request && event.payload.pull_request.title ||
@@ -18,7 +18,7 @@ module.exports = async function (context, timer) {
 
         const type = event.type === 'IssuesEvent' ? 'Nowe issue' : 'Nowy pull request';
 
-        return `${type}: Użytkownik '${event.actor.login}', repo '${event.repo.name}', title '${title}' `;
+        return `${type}: Uzytkownik '${event.actor.login}', repo '${event.repo.name}', title '${title}' `;
     });
 
     return messages;
