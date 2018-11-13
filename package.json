@@ -1,0 +1,15 @@
+{
+  "name": "szkola-chmury-func-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Łukasz Szewczak <lukaszewczak@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "superagent": "^4.0.0-beta.5"
+  }
+}
