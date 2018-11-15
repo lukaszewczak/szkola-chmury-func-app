@@ -1,0 +1,12 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "name": "queueItem",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "szkola-chmury-out-queue",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
