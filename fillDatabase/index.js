@@ -16,12 +16,14 @@ module.exports = async function (context, queueItem) {
 
         };
 
+        await sql.close();
         await sql.connect(config);
+        await sql.query`insert into GithubActivity(Message) values(${queueItem})`
 
-        context.log('Function connected to sql server');
+        context.log('Message added to sql server!');
 
     } catch (err) {
-        console.err(err);
+        context.log(err);
         sql.close();
     }
 };
